@@ -1,0 +1,10 @@
+{
+  "name": "bosphorus-client",
+  "version": "1.0.0",
+  "main": "dist",
+  "jsnext:main": "src",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^2.0.4"
+  }
+}

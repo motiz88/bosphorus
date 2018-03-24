@@ -1,0 +1,15 @@
+{
+  "name": "bosphorus-cli",
+  "version": "1.0.0",
+  "main": "dist",
+  "jsnext:main": "src",
+  "license": "MIT",
+  "bin": "dist/cli.js",
+  "dependencies": {
+    "bosphorus-cli-utils": "^1.0.0",
+    "commander": "^2.15.1",
+    "mz": "^2.7.0",
+    "promise-timeout": "^1.3.0",
+    "socket.io-client": "^2.0.4"
+  }
+}

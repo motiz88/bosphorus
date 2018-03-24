@@ -1,0 +1,60 @@
+{
+  "name": "bosphorus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Moti Zilberman <motiz88@gmail.com>",
+  "license": "MIT",
+  "bolt": {
+    "workspaces": ["packages/*", "examples/*"]
+  },
+  "dependencies": {
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-preset-expo": "^4.0.0",
+    "browser-resolve": "^1.11.2",
+    "commander": "^2.15.1",
+    "eslint-plugin-react": "^7.7.0",
+    "expo": "^25.0.0",
+    "mz": "^2.7.0",
+    "nyc": "^11.6.0",
+    "promise-timeout": "^1.3.0",
+    "react": "16.2.0",
+    "react-native":
+      "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "resolve": "^1.6.0",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-preset-env": "^1.6.1",
+    "bolt": "^0.20.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-eslint-comments": "^2.0.2",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-flowtype-errors": "^3.5.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "flow-bin": "^0.68.0",
+    "flow-copy-source": "^1.3.0",
+    "git-exec-and-restage": "^1.0.1",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "jest-expo": "25.0.0",
+    "lint-staged": "^7.0.0",
+    "nps": "^5.8.2",
+    "nps-utils": "^1.5.0",
+    "prettier": "^1.11.1",
+    "react-native-scripts": "1.11.1",
+    "react-test-renderer": "16.2.0"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "postinstall": "nps postinstall",
+    "build": "nps build",
+    "test": "nps ci",
+    "clean": "nps clean"
+  }
+}

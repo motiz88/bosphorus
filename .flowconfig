@@ -1,0 +1,12 @@
+[ignore]
+<PROJECT_ROOT>/examples/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]

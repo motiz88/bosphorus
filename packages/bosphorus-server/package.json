@@ -1,0 +1,13 @@
+{
+  "name": "bosphorus-server",
+  "version": "1.0.0",
+  "main": "dist",
+  "jsnext:main": "src",
+  "license": "MIT",
+  "bin": "dist/cli.js",
+  "dependencies": {
+    "bosphorus-cli-utils": "^1.0.0",
+    "commander": "^2.15.1",
+    "socket.io": "^2.0.4"
+  }
+}
