@@ -12,7 +12,7 @@ Bosphorus is:
 * `bosphorus-cli`, a command-line tool for requesting coverage data from your app and generating reports.
 * `bosphorus-server`, a proxy that lets `bosphorus-cli` and `bosphorus-client` communicate with each other.
 
-See `examples/expo-app` for an basic example that generates coverage reports on demand from a running React Native app.
+See [`examples/expo-app`](https://github.com/motiz88/bosphorus/tree/master/examples/expo-app) for a basic example that generates coverage reports on demand from a running React Native app.
 
 ## Why
 
