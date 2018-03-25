@@ -1,0 +1,13 @@
+{
+  "name": "bosphorus-test-utils",
+  "version": "1.0.0",
+  "main": "dist",
+  "jsnext:main": "src",
+  "license": "MIT",
+  "dependencies": {
+    "bosphorus-defaults": "^1.0.0",
+    "bosphorus-socket-utils": "^1.0.0",
+    "istanbul-lib-coverage": "^1.2.0",
+    "socket.io-client": "^2.0.4"
+  }
+}
