@@ -1,0 +1,12 @@
+{
+  "name": "bosphorus-repo-jest-utils",
+  "private": true,
+  "version": "1.0.0",
+  "main": "dist",
+  "jsnext:main": "src",
+  "license": "MIT",
+  "dependencies": {
+    "browser-resolve": "^1.11.2",
+    "resolve": "^1.6.0"
+  }
+}

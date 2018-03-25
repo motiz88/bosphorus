@@ -1,12 +1,11 @@
 {
-  "name": "bosphorus-jest-utils",
-  "private": true,
+  "name": "bosphorus-jest",
   "version": "1.0.0",
   "main": "dist",
   "jsnext:main": "src",
   "license": "MIT",
   "dependencies": {
-    "browser-resolve": "^1.11.2",
-    "resolve": "^1.6.0"
+    "bosphorus-defaults": "^1.0.0",
+    "bosphorus-test-utils": "^1.0.0"
   }
 }

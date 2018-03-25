@@ -3,17 +3,16 @@
 import program from "commander";
 import { makeAction } from "bosphorus-cli-utils";
 
-const DEFAULT_PORT = 8123;
+import { SERVER_PORT } from "bosphorus-defaults";
 
 program
   .version(require("../package.json").version)
-  .option("-p, --port", `Port to listen on. Defaults to ${DEFAULT_PORT}`);
+  .option("-p, --port", `Port to listen on. Defaults to ${SERVER_PORT}`);
 
 program.parse(process.argv);
 
 makeAction(async () => {
-  const port =
-    program.port || parseInt(process.env.PORT || "0") || DEFAULT_PORT;
+  const port = program.port || parseInt(process.env.PORT || "0") || SERVER_PORT;
   const io = require("socket.io")(port);
 
   process.stdout.write(`Listening on ${port}\n`);
@@ -23,6 +22,9 @@ makeAction(async () => {
   coverageNamespace.on("connection", socket => {
     socket.on("coverage", coverage => {
       controlNamespace.emit("coverage", coverage);
+    });
+    socket.on("coverage reset", coverage => {
+      controlNamespace.emit("coverage reset", coverage);
     });
   });
 

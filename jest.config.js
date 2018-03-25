@@ -1,3 +1,3 @@
 module.exports = {
-  resolver: "./packages/bosphorus-jest-utils/resolver.js"
+  resolver: "./packages/bosphorus-repo-jest-utils/resolver.js"
 };

@@ -1,5 +1,3 @@
-/* @flow */
-
 import * as React from "react";
 import { StyleSheet, Text, View, Button, Platform } from "react-native";
 
@@ -18,6 +16,7 @@ export default class App extends React.Component<void, State> {
     return (
       <View style={styles.container}>
         <Button
+          testID="increaseCoverage"
           onPress={this._handleButtonPress}
           disabled={this.state.pressed}
           title={
@@ -26,7 +25,7 @@ export default class App extends React.Component<void, State> {
               : "Press me to increase coverage"
           }
         />
-        <Text>
+        <Text testID="instructions">
           Make sure <Code>bosphorus-server</Code> is running, then go to{" "}
           <Code>examples/expo-app</Code> and run <Code>npm run coverage</Code>{" "}
           to get a coverage report.

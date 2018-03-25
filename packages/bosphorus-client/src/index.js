@@ -1,10 +1,12 @@
 import io from "socket.io-client";
 
+import { SERVER_URL, COVERAGE_VARIABLE } from "bosphorus-defaults";
+
 export default function startCoverageClient(
-  serverUrl = "http://localhost:8123",
+  serverUrl = SERVER_URL,
   { coverageVariable } = {}
 ) {
-  coverageVariable = coverageVariable || "__coverage__";
+  coverageVariable = coverageVariable || COVERAGE_VARIABLE;
   const socket = io(serverUrl + "/coverage");
   socket.on("request coverage", () => {
     socket.emit("coverage", global[coverageVariable]);
@@ -30,5 +32,6 @@ export default function startCoverageClient(
         }
       }
     }
+    socket.emit("coverage reset");
   });
 }

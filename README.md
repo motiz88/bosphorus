@@ -10,7 +10,8 @@ Bosphorus is:
 
 * `bosphorus-client`, a utility exposing coverage data from a running JavaScript process. Put this in your [`babel-plugin-istanbul`](https://github.com/istanbuljs/babel-plugin-istanbul)-instrumented app.
 * `bosphorus-cli`, a command-line tool for requesting coverage data from your app and generating reports.
-* `bosphorus-server`, a proxy that lets `bosphorus-cli` and `bosphorus-client` communicate with each other.
+* `bosphorus-jest`, a Jest plugin that automates requesting coverage data from your app under test. Use this if you're using a remote testing library like [Detox](https://github.com/wix/detox) with Jest as your test runner.
+* `bosphorus-server`, a proxy that lets the above packages communicate with each other.
 
 See [`examples/expo-app`](https://github.com/motiz88/bosphorus/tree/master/examples/expo-app) for a basic example that generates coverage reports on demand from a running React Native app.
 
