@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
 import program from "commander";
-import io from "socket.io-client";
-import { makeAction } from "bosphorus-cli-utils";
 import fs from "mz/fs";
 import path from "path";
-import { timeout } from "promise-timeout";
+import { makeAction } from "bosphorus-cli-utils";
+import { requestCoverage, resetCoverage } from "bosphorus-test-utils";
 
 import { SERVER_URL, TIMEOUT } from "bosphorus-defaults";
 
@@ -27,23 +26,9 @@ program
         server: serverUrl = SERVER_URL
       }) => {
         timeoutMs = parseInt(timeoutMs, 10);
-        const socket = io(serverUrl + "/control");
-        await timeout(
-          new Promise(resolve => {
-            socket.once("connect", resolve);
-          }),
-          timeoutMs
-        );
-        socket.emit("request coverage");
-        const coverage = await timeout(
-          new Promise(resolve => {
-            socket.once("coverage", resolve);
-          }),
-          timeoutMs
-        );
-
-        socket.close();
-
+        const coverage = await requestCoverage(serverUrl, {
+          timeout: timeoutMs
+        });
         process.stdout.write(`Writing to ${outputDir}\n`);
         if (!await fs.exists(outputDir)) {
           await fs.mkdir(outputDir);
@@ -62,11 +47,7 @@ program
   .option("-s, --server", `Set server URL. Defaults to ${SERVER_URL}`)
   .action(
     makeAction(async ({ server: serverUrl = SERVER_URL }) => {
-      const socket = io(serverUrl + "/control");
-      await new Promise(resolve => {
-        socket.once("connect", resolve);
-      });
-      socket.emit("reset coverage");
+      await resetCoverage(serverUrl);
     })
   );
 
