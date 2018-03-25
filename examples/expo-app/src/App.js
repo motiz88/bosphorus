@@ -1,5 +1,3 @@
-/* @flow */
-
 import * as React from "react";
 import { StyleSheet, Text, View, Button, Platform } from "react-native";
 
