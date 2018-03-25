@@ -23,6 +23,9 @@ makeAction(async () => {
     socket.on("coverage", coverage => {
       controlNamespace.emit("coverage", coverage);
     });
+    socket.on("coverage reset", coverage => {
+      controlNamespace.emit("coverage reset", coverage);
+    });
   });
 
   controlNamespace.on("connection", socket => {
