@@ -1,0 +1,5 @@
+{
+  "setupTestFrameworkScriptFile": "./init.js",
+  "collectCoverage": true,
+  "resolver": "../../../packages/bosphorus-repo-jest-utils/resolver.js"
+}
