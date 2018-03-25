@@ -45,10 +45,20 @@ program
 program
   .command("reset-coverage")
   .option("-s, --server", `Set server URL. Defaults to ${SERVER_URL}`)
+  .option(
+    "-t, --timeout <ms>",
+    `Set timeout for coverage reset response. Defaults to ${TIMEOUT} ms`
+  )
   .action(
-    makeAction(async ({ server: serverUrl = SERVER_URL }) => {
-      await resetCoverage(serverUrl);
-    })
+    makeAction(
+      async ({
+        timeout: timeoutMs = String(TIMEOUT),
+        server: serverUrl = SERVER_URL
+      }) => {
+        timeoutMs = parseInt(timeoutMs, 10);
+        await resetCoverage(serverUrl, { timeout: timeoutMs });
+      }
+    )
   );
 
 program.parse(process.argv);
