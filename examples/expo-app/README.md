@@ -30,6 +30,8 @@ Try running `npm run coverage` before and after pressing the button to see the c
 
 A Detox test suite is configured, using Jest as the test runner. Check out [expo/with-detox-tests](https://github.com/expo/with-detox-tests/) for prerequisites and usage instructions (see also [wix/detox#630](https://github.com/wix/detox/pull/630/files)).
 
+> ⚠️ Due to the size of the included Expo binary, you will need to use [Git LFS](https://git-lfs.github.com/) when cloning this repository in order to run the Detox test suite.
+
 The `npm run test:e2e:ios` command assumes that Expo (`exp start`) and `bosphorus-server` are both running.
 
 After each test, `bosphorus-jest` (configured in Jest's `setupTestFrameworkScriptFile`) pulls the coverage data from the app and merges it into the Jest process's own `__coverage__` global. This is sufficient for Jest's built-in coverage reporter (CLI: `--coverage` / API: `collectCoverage`) to do the rest.
