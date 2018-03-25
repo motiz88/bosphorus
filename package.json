@@ -1,5 +1,6 @@
 {
-  "name": "bosphorus",
+  "name": "bosphorus-monorepo",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "author": "Moti Zilberman <motiz88@gmail.com>",
